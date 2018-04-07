@@ -12,8 +12,8 @@ perform data analysis and implement novel classifiers. Moreover, one of
 ``gumpy``'s design principles was to make it easily extendable.
 
 :license: MIT License
-:contributions: Please use github (www.github.com/gumpy-bci/gumpy) and see below
-:issues: Please use the issue tracker on github (www.github.com/gumpy-bci/gumpy/issues)
+:contributions: Please use github (https://github.com/gumpy-hybridBCI/gumpy) and see below
+:issues: Please use the issue tracker on github (https://github.com/gumpy-hybridBCI/gumpy/issues)
 
 
 Documentation
@@ -49,7 +49,7 @@ How to cite gumpy
 =================
 
 Zied Tayeb, Nicolai Waniek, Juri Fedjaev, Nejla Ghaboosi, Leonard Rychly,
-Christian Widderich, Christoph Richter, Jörg Conradt. "gumpy: A Python Toolbox
+Christian Widderich, Christoph Richter, Gordon Cheng, Jörg Conradt. "gumpy: A Python Toolbox
 Suitable for Hybrid Brain-Computer Interfaces"
 
 
@@ -67,8 +67,9 @@ Additional References
 =====================
 
 * www.gumpy.org: gumpy's main website. You can find links to datasets here
-* www.github.com/gumpy-bci/gumpy: gumpy's main github repository
-* www.github.com/gumpy-bci/gumpy-deeplearning: gumpy's deep learning models for BCI
+* https://github.com/gumpy-hybridBCI/gumpy/: gumpy's main github repository
+* https://github.com/gumpy-hybridBCI/Gumpy-Deeplearning: gumpy's deep learning models for BCI
+* https://github.com/gumpy-hybridBCI/gumpy-Realtime : gumpy's real-time BCI module with several online demos 
 * https://www.youtube.com/watch?v=M68GeL8PafE
 
 License
