@@ -49,7 +49,7 @@ How to cite gumpy
 =================
 
 Zied Tayeb, Nicolai Waniek, Juri Fedjaev, Nejla Ghaboosi, Leonard Rychly,
-Christian Widderich, Christoph Richter, Gordon Cheng, Jörg Conradt. "gumpy: A Python Toolbox
+Christian Widderich, Christoph Richter, Jörg Conradt. "gumpy: A Python Toolbox
 Suitable for Hybrid Brain-Computer Interfaces"
 
 
@@ -57,7 +57,7 @@ Suitable for Hybrid Brain-Computer Interfaces"
 
     @Article{gumpy2018,
         Title = {gumpy: A Python Toolbox Suitable for Hybrid Brain-Computer Interfaces},
-        Author = {Tayeb, Zied and Waniek, Nicolai and Fedjaev, Juri and Ghaboosi, Nejla and Rychly, Leonard and Widderich, Christian and Richter, Christoph and Cheng, Gordon and Conradt, Jorg},
+        Author = {Tayeb, Zied and Waniek, Nicolai and Fedjaev, Juri and Ghaboosi, Nejla and Rychly, Leonard and Widderich, Christian and Richter, Christoph and Conradt, Jorg},
         Year = {2018},
         Journal = {}
     }
