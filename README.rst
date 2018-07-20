@@ -49,7 +49,7 @@ How to cite gumpy
 =================
 
 Zied Tayeb, Nicolai Waniek, Juri Fedjaev, Nejla Ghaboosi, Leonard Rychly,
-Christian Widderich, Christoph Richter, Jörg Conradt. "gumpy: A Python Toolbox
+Christian Widderich, Christoph Richter, Jonas Braun, Matteo Saveriano, Gordon Cheng and Jörg Conradt. "gumpy: A Python Toolbox
 Suitable for Hybrid Brain-Computer Interfaces"
 
 
@@ -57,7 +57,7 @@ Suitable for Hybrid Brain-Computer Interfaces"
 
     @Article{gumpy2018,
         Title = {gumpy: A Python Toolbox Suitable for Hybrid Brain-Computer Interfaces},
-        Author = {Tayeb, Zied and Waniek, Nicolai and Fedjaev, Juri and Ghaboosi, Nejla and Rychly, Leonard and Widderich, Christian and Richter, Christoph and Conradt, Jorg},
+        Author = {Tayeb, Zied and Waniek, Nicolai and Fedjaev, Juri and Ghaboosi, Nejla and Rychly, Leonard and Widderich, Christian and Richter, Christoph and Braun, Jonas and Saveriano, Matteo and Cheng, Gordon and Conradt, Jorg},
         Year = {2018},
         Journal = {}
     }
@@ -67,6 +67,7 @@ Additional References
 =====================
 
 * www.gumpy.org: gumpy's main website. You can find links to datasets here
+* https://www.youtube.com/channel/UCdarvfot4Ustk2UCmCp62sw : gumpy's Youtube channel
 * https://github.com/gumpy-hybridBCI/gumpy/: gumpy's main github repository
 * https://github.com/gumpy-hybridBCI/Gumpy-Deeplearning: gumpy's deep learning models for BCI
 * https://github.com/gumpy-hybridBCI/gumpy-Realtime : gumpy's real-time BCI module with several online demos 
