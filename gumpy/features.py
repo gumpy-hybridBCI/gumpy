@@ -128,8 +128,7 @@ def CSP(*tasks):
  
     Args:
         For N tasks, N arrays are passed to CSP each with dimensionality (# of trials of task N) x (feature vector)
-        **kwargs: Additional keyword arguments that will be passed to the
-            Classifier instantiation
+  
     Returns:
         A 2D CSP features matrix 
     """
@@ -186,7 +185,6 @@ def spatialFilter(Ra,Rb):
  
     Args:
         Covariance matrices Ra and Rb
-            Classifier instantiation
     Returns:
         A 2D spatial filter matrix 
     """
