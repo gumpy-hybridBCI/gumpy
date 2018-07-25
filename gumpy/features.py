@@ -123,14 +123,16 @@ def sequential_feature_selector(features, labels, classifier, k_features, kfold,
 
 #######################################################################
 
-#Common Spatial Pattern implementation in Python, used to build spatial filters for identifying task-related activity.
-
-
-# CSP takes any number of arguments, but each argument must be a collection of trials associated with a task
-# That is, for N tasks, N arrays are passed to CSP each with dimensionality (# of trials of task N) x (feature vector)
-# Trials may be of any dimension, provided that each trial for each task has the same dimensionality,
-# otherwise there can be no spatial filtering since the trials cannot be compared
 def CSP(*tasks):
+	  """This is a function to extract Common spatial pattern features 
+ 
+    Args:
+        For N tasks, N arrays are passed to CSP each with dimensionality (# of trials of task N) x (feature vector)
+        **kwargs: Additional keyword arguments that will be passed to the
+            Classifier instantiation
+    Returns:
+        A 2D CSP features matrix 
+    """
 	if len(tasks) < 2:
 		print("Must have at least 2 tasks for filtering.")
 		return (None,) * len(tasks)
@@ -167,12 +169,28 @@ def CSP(*tasks):
 
 # covarianceMatrix takes a matrix A and returns the covariance matrix, scaled by the variance
 def covarianceMatrix(A):
+    """This is a function to compute the covariance Matrix  
+ 
+    Args:
+        2D matrix 
+            Classifier instantiation
+    Returns:
+        A 2D covariance matrix scaled by the variance 
+    """
 	#Ca = np.dot(A,np.transpose(A))/np.trace(np.dot(A,np.transpose(A)))
 	Ca = np.cov(A)
 	return Ca
 
-# spatialFilter returns the spatial filter SFa for mean covariance matrices Ra and Rb
 def spatialFilter(Ra,Rb):
+	    """This is a function to extract the spatial filters  
+ 
+    Args:
+        Covariance matrices Ra and Rb
+            Classifier instantiation
+    Returns:
+        A 2D spatial filter matrix 
+    """
+	
 	R = Ra + Rb
 	E,U = la.eig(R)
 
@@ -202,8 +220,19 @@ def spatialFilter(Ra,Rb):
 	return SFa
 
 ############################################################################
-#RMS feature extraction method 
+
 def RMS_features_extraction(data, trialList, window_size, window_shift):
+	
+    """This is a function to extract the RMS features   
+ 
+    Args:
+        data: 2D (time points, Channels)
+	trialList: list of the trials 
+	window_size: Size of the window for extracting features 
+	window_shift: size of the overalp  
+    Returns:
+        The features matrix (trials, features) 
+    """
     if window_shift > window_size:
         raise ValueError("window_shift > window_size")
 
@@ -227,7 +256,17 @@ def RMS_features_extraction(data, trialList, window_size, window_shift):
 
 #######################################################
 def dwt_features(data, trials, level, sampling_freq, w, n, wavelet): 
-  
+	
+       """This is a function to extract the discrete wavelet features   
+ 
+    Args:
+        data: 2D (time points, Channels)
+	trias: Trials vector 
+	Level: level of DWT decomposition 
+	sampling_freq: Sampling frequency
+    Returns:
+        The features matrix (Nbre trials, Nbre features) 
+    """
     
     # number of features per trial
     n_features = 9 
@@ -253,6 +292,14 @@ def dwt_features(data, trials, level, sampling_freq, w, n, wavelet):
 
 ##################################################################
 def alpha_subBP_features(data):
+	    """This is a function to extract alpha bands  
+ 
+    Args:
+        data: 2D (time points, Channels)
+	
+    Returns:
+        The alpha sub-bands  
+    """
     # filter data in sub-bands by specification of low- and high-cut frequencies
     alpha1 = gumpy.signal.butter_bandpass(data, 8.5, 11.5, order=6)
     alpha2 = gumpy.signal.butter_bandpass(data, 9.0, 12.5, order=6)
@@ -263,6 +310,14 @@ def alpha_subBP_features(data):
     return [alpha1, alpha2, alpha3, alpha4]
 
 def beta_subBP_features(data):
+   """This is a function to extract beta bands  
+ 
+    Args:
+        data: 2D (time points, Channels)
+	
+    Returns:
+        The beta sub-bands  
+    """
     beta1 = gumpy.signal.butter_bandpass(data, 14.0, 30.0, order=6)
     beta2 = gumpy.signal.butter_bandpass(data, 16.0, 17.0, order=6)
     beta3 = gumpy.signal.butter_bandpass(data, 17.0, 18.0, order=6)
@@ -270,11 +325,36 @@ def beta_subBP_features(data):
     return [beta1, beta2, beta3, beta4]
 
 def powermean(data, trial, fs, w):
+   """This is a function to compute the mean power of the data  
+ 
+    Args:
+        data: 2D (time points, Channels)
+	trial: trial vector 
+	fs: sampling frequency 
+	w: window
+	
+    Returns:
+        The mean power  
+    """
     return np.power(data[trial+fs*4+w[0]: trial+fs*4+w[1],0],2).mean(), \
            np.power(data[trial+fs*4+w[0]: trial+fs*4+w[1],1],2).mean(), \
            np.power(data[trial+fs*4+w[0]: trial+fs*4+w[1],2],2).mean()
 
+
+
 def log_subBP_feature_extraction(alpha, beta, trials, fs, w):
+	   """This is a function to extract log power of alpha and beta bands  
+ 
+    Args:
+        Alpha: filtered data in the alpha band 
+	Beta: filtered data in the beta band 
+	trials: trial vector 
+	fs: sampling frequency 
+	w: window
+	
+    Returns:
+        The features matrix   
+    """
     # number of features combined for all trials
     n_features = 15
     # initialize the feature matrix
